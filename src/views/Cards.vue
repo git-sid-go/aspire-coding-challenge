@@ -1,5 +1,5 @@
 <template>
-  <div class="cards-root bg-primary">
+  <div class="cards-root">
     <BottomTabNav />
   </div>
 </template>

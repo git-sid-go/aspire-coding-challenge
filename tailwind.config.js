@@ -8,6 +8,12 @@ module.exports = {
         secondary: "#EDF3FF",
         white: "#FFF",
       },
+      fontSize: {
+        xxs: ".563rem",
+      },
+      boxShadow: {
+        bottomnav: "0 -3px 6px 0 #00000014",
+      },
     },
   },
   variants: {
