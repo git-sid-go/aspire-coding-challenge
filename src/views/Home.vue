@@ -2,7 +2,7 @@
   <div class="home">
     <div id="nav">
       <router-link to="/apply-and-manage-loans">Loans</router-link> |
-      <router-link to="/dashboard">Dashboard</router-link>
+      <router-link to="/cards">Cards</router-link>
     </div>
   </div>
 </template>
