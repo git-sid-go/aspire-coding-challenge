@@ -1,17 +1,29 @@
 <template>
-  <div class="cards-root bg-app-primary flex-1">
-    <div class="p-6">
-      <div class="flex justify-end">
-        <AppLogo />
+  <div class="cards-root bg-app-primary flex-1 pb-14">
+    <div class="sticky top-0">
+      <div class="p-6">
+        <div class="flex justify-end">
+          <AppLogo />
+        </div>
+        <div class="flex justify-between">
+          <AccountBalance :amount="`3,000`" />
+          <AddNewButton />
+        </div>
       </div>
-      <div class="flex justify-between">
-        <AccountBalance :amount="`3,000`" />
-        <AddNewButton />
+      <div class="z-10">
+        <CardsCarousel />
       </div>
     </div>
-    <div>
-      <CardsCarousel />
+
+    <div class="bg-white rounded-tl-3xl rounded-tr-3xl z-50">
+      <q-card class="pb-6">
+        <CardActions />
+        <div class="bg-white px-6">
+          <RecentTransactions />
+        </div>
+      </q-card>
     </div>
+
     <BottomTabNav />
   </div>
 </template>
@@ -21,6 +33,8 @@ import { defineComponent } from "vue";
 import BottomTabNav from "@/components/BottomTabNav.vue";
 import AccountBalance from "@/components/AccountBalance.vue";
 import CardsCarousel from "@/components/CardsCarousel.vue";
+import CardActions from "@/components/CardActions.vue";
+import RecentTransactions from "@/components/RecentTransactions.vue";
 import AppLogo from "@/legos/AppLogo.vue";
 import AddNewButton from "@/legos/AddNewButton.vue";
 
@@ -32,6 +46,8 @@ export default defineComponent({
     AccountBalance,
     AddNewButton,
     CardsCarousel,
+    CardActions,
+    RecentTransactions,
   },
 });
 </script>
