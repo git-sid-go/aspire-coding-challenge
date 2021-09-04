@@ -1,5 +1,7 @@
 <template>
-  <router-view />
+  <main class="h-screen flex flex-col">
+    <router-view />
+  </main>
 </template>
 
 <style>

@@ -5,3 +5,8 @@ export const NavIcons = {
   credit: require("./icons/Credit.svg"),
   profile: require("./icons/Account.svg"),
 };
+
+export const CommonIcons = {
+  appLogo: require("./icons/Logo.svg"),
+  add: require("./icons/box.svg"),
+};

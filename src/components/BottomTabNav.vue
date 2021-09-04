@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bottom-tab-nav-root fixed bottom-0 left-0 right-0 shadow-bottomnav"
+    class="bottom-tab-nav-root fixed bottom-0 left-0 right-0 shadow-bottomnav bg-white"
   >
     <div class="flex justify-between px-7 py-2">
       <template :key="item.path" v-for="item in nav_items_list">
