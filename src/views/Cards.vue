@@ -1,5 +1,5 @@
 <template>
-  <div class="cards-root bg-primary flex-1">
+  <div class="cards-root bg-app-primary flex-1">
     <div class="p-6">
       <div class="flex justify-end">
         <AppLogo />
@@ -9,6 +9,9 @@
         <AddNewButton />
       </div>
     </div>
+    <div>
+      <CardsCarousel />
+    </div>
     <BottomTabNav />
   </div>
 </template>
@@ -17,6 +20,7 @@
 import { defineComponent } from "vue";
 import BottomTabNav from "@/components/BottomTabNav.vue";
 import AccountBalance from "@/components/AccountBalance.vue";
+import CardsCarousel from "@/components/CardsCarousel.vue";
 import AppLogo from "@/legos/AppLogo.vue";
 import AddNewButton from "@/legos/AddNewButton.vue";
 
@@ -27,6 +31,7 @@ export default defineComponent({
     AppLogo,
     AccountBalance,
     AddNewButton,
+    CardsCarousel,
   },
 });
 </script>

@@ -9,4 +9,9 @@ export const NavIcons = {
 export const CommonIcons = {
   appLogo: require("./icons/Logo.svg"),
   add: require("./icons/box.svg"),
+  appNameLogo: require("./icons/Logo-2.svg"),
+};
+
+export const CardIcons = {
+  visa: require("./icons/Visa Logo.svg"),
 };

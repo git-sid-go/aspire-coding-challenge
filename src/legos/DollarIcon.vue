@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-10 h-5 bg-tertiary text-xs flex justify-center items-center rounded"
+    class="w-10 h-5 bg-app-tertiary text-xs flex justify-center items-center rounded"
   >
     S$
   </div>

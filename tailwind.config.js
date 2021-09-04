@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: {
-        primary: "#0C365A",
-        secondary: "#EDF3FF",
-        tertiary: "#01D167",
+        "app-primary": "#0C365A",
+        "app-secondary": "#EDF3FF",
+        "app-tertiary": "#01D167",
         white: "#FFF",
       },
       textColor: {
@@ -15,6 +15,7 @@ module.exports = {
       fontSize: {
         xxs: ".563rem",
         xsm: ".813rem",
+        xxl: "1.375rem",
       },
       boxShadow: {
         bottomnav: "0 -3px 6px 0 #00000014",
