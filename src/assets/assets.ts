@@ -21,7 +21,7 @@ export const CardIcons = {
   visa: require("./icons/Visa Logo.svg"),
   eyeBlue: require("./icons/eye-blue.svg"),
   eyeGreen: require("./icons/eye-green.svg"),
-  eyeYellow: require("./icons/eye-yellow.svg"),
+  eyePurple: require("./icons/eye-purple.svg"),
 };
 
 export const CardActionIcons = {

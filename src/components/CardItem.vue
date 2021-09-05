@@ -67,7 +67,7 @@ export default defineComponent({
           eyeIcon = CardIcons.eyeBlue;
           break;
         case 2:
-          eyeIcon = CardIcons.eyeYellow;
+          eyeIcon = CardIcons.eyePurple;
           break;
         default:
           eyeIcon = CardIcons.eyeGreen;

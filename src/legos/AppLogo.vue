@@ -1,5 +1,7 @@
 <template>
-  <img :src="logo" alt="aspire logo" />
+  <router-link to="/">
+    <img :src="logo" alt="aspire logo" />
+  </router-link>
 </template>
 
 <script lang="ts">

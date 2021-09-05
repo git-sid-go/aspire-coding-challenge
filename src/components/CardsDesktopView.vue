@@ -1,7 +1,7 @@
 <template>
   <div class="cards-root bg-white flex-1 flex pl-88">
     <DesktopSideNav />
-    <div class="p-15 flex-1 max-w-6xl m-auto">
+    <div class="p-15 flex-1 max-w-6xl mx-auto">
       <div class="flex w-full justify-between items-center">
         <AccountBalance :amount="`3,000`" />
         <AddNewButton label="New Card" />
