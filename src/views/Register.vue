@@ -1,34 +1,61 @@
 <template>
-  <div>
-    <Form @submit="onSubmit">
-      <div class="border">
+  <div class="flex flex-col items-center bg-app-primary h-screen py-12">
+    <div>
+      <img :src="appNameLogo" alt="aspire" />
+    </div>
+    <p class="text-white font-bold text-lg mt-10 mb-4">
+      Register as a new user!
+    </p>
+    <Form
+      @submit="onSubmit"
+      class="w-full max-w-xl flex flex-col items-center mx-auto"
+    >
+      <div class="w-10/12 flex justify-center relative">
         <Field
           name="name"
           type="text"
-          placeholder="Enter name"
+          placeholder="Enter your name"
+          class="w-full border font-semibold py-2 px-4 mb-9 rounded-md text-app-primary"
           :rules="isRequired"
         />
+        <ErrorMessage
+          class="absolute left-0 bottom-4 text-xs text-red-400"
+          name="name"
+        />
       </div>
-      <div class="border">
+
+      <div class="w-10/12 flex justify-center relative">
         <Field
           name="email"
           type="email"
-          placeholder="Enter email"
+          placeholder="Enter your email"
+          class="w-full border font-semibold py-2 px-4 mb-9 rounded-md text-app-primary"
           :rules="validateEmail"
         />
+        <ErrorMessage
+          class="absolute left-0 bottom-4 text-xs text-red-400"
+          name="email"
+        />
       </div>
-      <div class="border">
+      <div class="w-10/12 flex justify-center relative">
         <Field
           name="password"
           type="password"
-          placeholder="Enter password"
+          placeholder="Enter a strong password"
+          class="w-full border font-semibold py-2 px-4 mb-9 rounded-md text-app-primary"
           :rules="isRequired"
         />
+        <ErrorMessage
+          class="absolute left-0 bottom-4 text-xs text-red-400"
+          name="password"
+        />
       </div>
-      <div class="border"><ErrorMessage name="name" /></div>
-      <div class="border"><ErrorMessage name="email" /></div>
-      <div class="border"><ErrorMessage name="password" /></div>
-      <button type="submit">Register</button>
+      <button
+        class="bg-app-tertiary px-4 py-2 font-bold text-white text-lg mt-5 rounded-md"
+        type="submit"
+      >
+        Register
+      </button>
     </Form>
   </div>
 </template>
@@ -37,6 +64,7 @@
 import { defineComponent } from "vue";
 import { mapState, mapActions } from "vuex";
 import { Form, Field, ErrorMessage } from "vee-validate";
+import { CommonIcons } from "@/assets/assets";
 
 export default defineComponent({
   name: "Register",
@@ -81,6 +109,9 @@ export default defineComponent({
       // All is good
       return true;
     },
+  },
+  setup() {
+    return { appNameLogo: CommonIcons.appNameLogo };
   },
 });
 </script>

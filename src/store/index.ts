@@ -46,12 +46,14 @@ export default createStore({
         allLoans: [],
       },
       actions: {
-        addNewLoan({ commit }, { amount, numOfTerms }) {
+        addNewLoan({ commit }, { loanId, amount, numOfTerms, terms }) {
           return new Promise((resolve) => {
             setTimeout(() => {
               commit("addNewLoan", {
+                loanId,
                 amount,
                 numOfTerms,
+                terms,
               });
               resolve("Loan created");
             }, 200);

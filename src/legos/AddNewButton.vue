@@ -1,7 +1,7 @@
 <template>
   <button
     type="button"
-    class="flex items-center text-btn-primary font-bold text-xsm"
+    class="flex items-center text-btn-primary font-bold text-xsm h-full xl:bg-app-blue xl:px-3 xl:py-2 rounded xl:text-app-white"
   >
     <img class="mr-1.5" :src="icon" />
     {{ label }}
@@ -11,6 +11,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { CommonIcons } from "@/assets/assets";
+import useWindowSize from "@/composables/useWindowSize";
 
 export default defineComponent({
   name: "AddNewButton",
@@ -18,7 +19,10 @@ export default defineComponent({
     label: String,
   },
   setup() {
-    return { icon: CommonIcons.add };
+    const { width: SCREEN_WIDTH } = useWindowSize();
+    return {
+      icon: SCREEN_WIDTH.value < 1280 ? CommonIcons.add : CommonIcons.addWhite,
+    };
   },
 });
 </script>

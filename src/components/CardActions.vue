@@ -1,5 +1,7 @@
 <template>
-  <div class="bg-app-semi-primary rounded-tl-3xl rounded-tr-3xl">
+  <div
+    class="bg-app-semi-primary rounded-tl-3xl rounded-tr-3xl xl:rounded-3xl xl:mx-4 xl:mt-4"
+  >
     <div class="flex justify-between py-5 px-2 rounded-tl-3xl rounded-tr-3xl">
       <template :key="item.actionName" v-for="item in card_actions">
         <div class="flex flex-col items-center w-16">

@@ -7,7 +7,7 @@
       </div>
     </div>
     <div :class="`rounded-xl relative ${cardColor}`">
-      <div class="flex flex-col p-6 text-left z-10">
+      <div class="flex flex-col p-6 text-left z-10 xl:p-7">
         <img :src="appNameLogo" alt="aspire logo" class="self-end" />
         <div class="text-xxl text-white font-bold mb-7">
           {{ name }}

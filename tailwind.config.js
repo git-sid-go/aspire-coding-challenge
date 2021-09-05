@@ -3,6 +3,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      padding: {
+        88: "21.25rem",
+        15: "3.75rem",
+      },
       backgroundColor: {
         "app-primary": "#0C365A",
         "app-secondary": "#EDF3FF",
@@ -17,6 +21,7 @@ module.exports = {
         white: "#FFF",
       },
       textColor: {
+        "app-white": "#FFFFFF",
         "btn-primary": "#23CEFD",
         "app-primary": "#0C365A",
         "app-black": "#222222",
@@ -34,9 +39,15 @@ module.exports = {
         xxs: ".563rem",
         xsm: ".813rem",
         xxl: "1.375rem",
+        smbase: "0.938rem",
       },
       boxShadow: {
         bottomnav: "0 -3px 6px 0 #00000014",
+        desktopcontainer: "0 2px 12px 0 #00000014",
+      },
+      maxWidth: {
+        xsm: "21.25rem",
+        "8xl": "85.375rem",
       },
     },
   },

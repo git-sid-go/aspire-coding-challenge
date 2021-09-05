@@ -1,5 +1,5 @@
 <template>
-  <main class="h-screen flex flex-col">
+  <main class="h-screen flex flex-col max-w-3xl m-auto xl:max-w-none">
     <router-view />
   </main>
 </template>

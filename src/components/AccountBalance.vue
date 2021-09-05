@@ -1,11 +1,15 @@
 <template>
   <div>
-    <div class="text-sm text-white leading-4 font-semibold">
+    <div
+      class="text-sm text-app-white leading-4 font-semibold xl:text-app-black"
+    >
       Account Balance
     </div>
-    <div class="flex text-white font-bold mt-4">
+    <div class="flex text-app-white font-bold mt-4">
       <DollarIcon />
-      <p class="text-2xl text-white leading-4 ml-2.5">{{ amount }}</p>
+      <p class="text-2xl text-app-white leading-4 ml-2.5 xl:text-app-black">
+        {{ amount }}
+      </p>
     </div>
   </div>
 </template>

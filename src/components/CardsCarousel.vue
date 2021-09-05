@@ -7,8 +7,15 @@
     animated
     navigation
     height="auto"
-    class="bg-transparent mt-4"
+    class="bg-transparent mt-4 xl:mt-0"
   >
+    <template v-slot:navigation-icon="slotProps">
+      <div
+        v-if="slotProps.active"
+        class="w-4	h-2 bg-white mx-0.5 rounded-lg mb-2"
+      />
+      <div v-else class="w-2 h-2 bg-white mx-0.5 rounded-lg opacity-10 mb-2" />
+    </template>
     <template :key="item.nameOnCard" v-for="(item, index) in cards_list">
       <q-carousel-slide :name="item.nameOnCard">
         <div class="q-mt-md text-center">
