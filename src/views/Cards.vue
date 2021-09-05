@@ -10,12 +10,11 @@
           <AddNewButton />
         </div>
       </div>
-      <div class="z-10">
-        <CardsCarousel />
-      </div>
+      <CardTabs />
+      <CardsCarousel />
     </div>
 
-    <div class="bg-white rounded-tl-3xl rounded-tr-3xl z-50">
+    <div class="bg-white rounded-tl-3xl rounded-tr-3xl">
       <q-card class="pb-6">
         <CardActions />
         <div class="bg-white px-6">
@@ -37,6 +36,7 @@ import CardsCarousel from "@/components/CardsCarousel.vue";
 import CardActions from "@/components/CardActions.vue";
 import RecentTransactions from "@/components/RecentTransactions.vue";
 import CardDetails from "@/components/CardDetails.vue";
+import CardTabs from "@/components/CardTabs.vue";
 import AppLogo from "@/legos/AppLogo.vue";
 import AddNewButton from "@/legos/AddNewButton.vue";
 
@@ -51,6 +51,7 @@ export default defineComponent({
     CardActions,
     RecentTransactions,
     CardDetails,
+    CardTabs,
   },
 });
 </script>

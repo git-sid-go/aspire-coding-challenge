@@ -1,5 +1,9 @@
 <template>
-  <BaseExpansionItem headerTitle="Recent Transactions" :icon="transactionIcon">
+  <BaseExpansionItem
+    headerTitle="Recent Transactions"
+    :icon="transactionIcon"
+    isOpenByDefault
+  >
     <div class="bg-white">
       <template :key="item.name" v-for="item in recent_transactions_list">
         <TransactionItem

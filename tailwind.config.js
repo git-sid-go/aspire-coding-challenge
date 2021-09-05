@@ -28,6 +28,7 @@ module.exports = {
         grey: "#F0F0F0",
         grey2: "#F5F5F5",
         "border-green": "#DDFFEC",
+        "border-blue": "#23CEFD",
       },
       fontSize: {
         xxs: ".563rem",

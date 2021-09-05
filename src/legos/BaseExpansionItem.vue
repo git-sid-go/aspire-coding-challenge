@@ -2,6 +2,7 @@
   <div class="border border-grey my-6 rounded-lg">
     <q-expansion-item
       expand-separator
+      :default-opened="isOpenByDefault"
       expand-icon="img:/img/icons/down-arrow.svg"
       header-class="bg-app-bluish-grey rounded-lg"
     >
@@ -24,6 +25,7 @@ export default defineComponent({
   props: {
     headerTitle: String,
     icon: String,
+    isOpenByDefault: Boolean,
   },
 });
 </script>
