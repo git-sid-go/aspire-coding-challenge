@@ -22,7 +22,7 @@
 
 <script>
 import { defineComponent } from "vue";
-import { useConfirmRepayment } from "@/composables/useConfirmRepayment";
+import { mapActions } from "vuex";
 
 export default defineComponent({
   name: "LoanTermItem",
@@ -32,19 +32,17 @@ export default defineComponent({
     amount: String,
     isRepayed: Boolean,
   },
-  setup(props) {
-    const { initiateRepayment } = useConfirmRepayment();
-
-    const repayTerm = () => {
-      console.log("component level");
-      initiateRepayment({
-        amount: props.amount,
-        month: props.month,
-        loanId: props.loanId,
+  methods: {
+    ...mapActions({
+      initiateRepayTermAction: "loans/initiateRepayTerm",
+    }),
+    repayTerm() {
+      this.initiateRepayTermAction({
+        repayLoanId: this.loanId,
+        repayAmount: this.amount,
+        repayMonth: this.month,
       });
-    };
-
-    return { repayTerm };
+    },
   },
 });
 </script>

@@ -44,6 +44,10 @@ export default createStore({
       namespaced: true,
       state: {
         allLoans: [],
+        showConfirmationModal: false,
+        repayAmount: 0,
+        repayMonth: "",
+        repayLoanId: "",
       },
       actions: {
         addNewLoan({ commit }, { loanId, amount, numOfTerms, terms }) {
@@ -59,10 +63,25 @@ export default createStore({
             }, 200);
           });
         },
+        initiateRepayTerm(
+          { commit },
+          { repayLoanId, repayAmount, repayMonth }
+        ) {
+          console.log("action");
+          commit("showConfirmation", {
+            repayLoanId,
+            repayAmount,
+            repayMonth,
+          });
+        },
       },
       mutations: {
         addNewLoan(state, payload) {
           state.allLoans = [...state.allLoans, payload];
+        },
+        showConfirmation(state, payload) {
+          console.log("mutation");
+          state = { ...state, ...payload, showConfirmationModal: true };
         },
       },
       getters: {},

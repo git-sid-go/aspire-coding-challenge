@@ -1,5 +1,5 @@
 <template>
-  <q-dialog v-model="showConfirmDialog">
+  <q-dialog v-show="showConfirmationModal">
     <q-card>
       <q-card-section class="row items-center">
         <q-avatar icon="payment" color="primary" text-color="white" />
@@ -19,24 +19,14 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { useConfirmRepayment } from "@/composables/useConfirmRepayment";
+import { mapState } from "vuex";
 
 export default defineComponent({
   name: "ConfirmRepayment",
-  setup() {
-    const {
-      showConfirmDialog,
-      repayAmount,
-      repayMonth,
-      repayForLoan,
-    } = useConfirmRepayment();
-
-    return {
-      showConfirmDialog,
-      repayAmount,
-      repayMonth,
-      repayForLoan,
-    };
+  computed: {
+    ...mapState({
+      showConfirmationModal: (state: any) => state.loans.showConfirmationModal,
+    }),
   },
 });
 </script>
