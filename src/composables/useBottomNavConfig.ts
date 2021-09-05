@@ -10,6 +10,7 @@ const NAV_LIST = [
     name: "Cards",
     path: "/",
     icon: NavIcons.card,
+    isActive: true,
   },
   {
     name: "Payments",

@@ -8,7 +8,11 @@
     </p>
     <div class="mt-24">
       <template :key="item.path" v-for="item in nav_items_list">
-        <NavItem :name="item.name" :icon="item.icon" />
+        <NavItem
+          :name="item.name"
+          :icon="item.icon"
+          :isActive="item.isActive"
+        />
       </template>
     </div>
   </div>

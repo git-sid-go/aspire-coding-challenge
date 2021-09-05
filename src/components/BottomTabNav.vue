@@ -4,7 +4,11 @@
   >
     <div class="flex justify-between px-7 py-2">
       <template :key="item.path" v-for="item in nav_items_list">
-        <NavItem :name="item.name" :icon="item.icon" />
+        <NavItem
+          :name="item.name"
+          :icon="item.icon"
+          :isActive="item.isActive"
+        />
       </template>
     </div>
   </div>
