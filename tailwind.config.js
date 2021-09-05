@@ -49,6 +49,9 @@ module.exports = {
         xsm: "21.25rem",
         "8xl": "85.375rem",
       },
+      letterSpacing: {
+        widest: ".25em",
+      },
     },
   },
   variants: {

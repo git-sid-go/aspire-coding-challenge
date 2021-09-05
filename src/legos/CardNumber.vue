@@ -1,7 +1,11 @@
 <template>
   <div class="flex">
     <template :key="item" v-for="(item, index) in cardDigitsArray">
-      <CardFourDigits :index="index" :number="item" />
+      <CardFourDigits
+        :isCardNumberVisible="isCardNumberVisible"
+        :index="index"
+        :number="item"
+      />
     </template>
   </div>
 </template>
@@ -14,6 +18,7 @@ export default defineComponent({
   name: "CardNumber",
   props: {
     number: String,
+    isCardNumberVisible: Boolean,
   },
   components: {
     CardFourDigits,
