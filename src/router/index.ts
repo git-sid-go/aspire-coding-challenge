@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
+import store from "../store";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -24,12 +25,25 @@ const routes: Array<RouteRecordRaw> = [
     name: "Loans",
     component: () =>
       import(/* webpackChunkName: "loans" */ "../views/Loans.vue"),
+    meta: {
+      authRequired: true,
+    },
   },
 ];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
+});
+
+router.beforeEach((to, from, next) => {
+  const authRequired = to.matched.some((route) => route.meta.authRequired);
+  if (!authRequired) return next();
+  if (store.getters["auth/isLoggedIn"]) {
+    next();
+  } else {
+    next("/register");
+  }
 });
 
 export default router;
