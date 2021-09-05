@@ -1,6 +1,6 @@
 <template>
-  <BaseExpansionItem headerTitle="Recent Transactions">
-    <div class="bg-white px-6">
+  <BaseExpansionItem headerTitle="Recent Transactions" :icon="transactionIcon">
+    <div class="bg-white">
       <template :key="item.name" v-for="item in recent_transactions_list">
         <TransactionItem
           :name="item.name"
@@ -12,6 +12,11 @@
           :bgColor="item.color"
         />
       </template>
+      <div class="py-4 text-center bg-app-green">
+        <a type="button" class="text-app-green font-semibold text-xsm">
+          View all card transactions
+        </a>
+      </div>
     </div>
   </BaseExpansionItem>
 </template>

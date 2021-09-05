@@ -7,7 +7,7 @@
     >
       <template v-slot:header>
         <div class="flex items-center text-app-primary font-semibold flex-1">
-          <img :src="transactionIcon" />
+          <img :src="icon" />
           <div class="ml-3">{{ headerTitle }}</div>
         </div>
       </template>
@@ -23,6 +23,7 @@ export default defineComponent({
   name: "BaseExpansionItem",
   props: {
     headerTitle: String,
+    icon: String,
   },
 });
 </script>

@@ -10,6 +10,7 @@ module.exports = {
         "app-semi-primary": "#EDF3FF",
         "app-bluish-grey": "#FAFCFF",
         "app-blue": "#325BAF",
+        "app-green": "#EDFFF5",
         "transaction-blue": "#009DFF1A",
         "transaction-green": "#00D6B51A",
         "transaction-red": "#F251951A",
@@ -26,6 +27,7 @@ module.exports = {
       colors: {
         grey: "#F0F0F0",
         grey2: "#F5F5F5",
+        "border-green": "#DDFFEC",
       },
       fontSize: {
         xxs: ".563rem",

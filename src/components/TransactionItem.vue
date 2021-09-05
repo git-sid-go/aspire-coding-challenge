@@ -1,5 +1,5 @@
 <template>
-  <div class="flex py-4 border-b border-grey2">
+  <div class="flex py-4 border-b border-grey2 px-6">
     <div
       :class="
         `w-12 h-12 rounded-full flex justify-center items-center ${bgColor}`
@@ -22,7 +22,10 @@
             }`
           "
         >
-          {{ amount }}
+          <div class="flex items-center">
+            {{ amount }}
+            <img class="ml-2.5" :src="caretRight" alt="caret right" />
+          </div>
         </div>
       </div>
       <div class="flex items-center mt-3.5">
@@ -39,7 +42,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import { TransactionIcons } from "@/assets/assets";
+import { TransactionIcons, CommonIcons } from "@/assets/assets";
 
 export default defineComponent({
   name: "TransactionItem",
@@ -53,7 +56,10 @@ export default defineComponent({
     bgColor: String,
   },
   setup() {
-    return { cardIcon: TransactionIcons.card };
+    return {
+      cardIcon: TransactionIcons.card,
+      caretRight: CommonIcons.caretRight,
+    };
   },
 });
 </script>

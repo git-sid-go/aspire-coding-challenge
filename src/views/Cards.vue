@@ -19,6 +19,7 @@
       <q-card class="pb-6">
         <CardActions />
         <div class="bg-white px-6">
+          <CardDetails />
           <RecentTransactions />
         </div>
       </q-card>
@@ -35,6 +36,7 @@ import AccountBalance from "@/components/AccountBalance.vue";
 import CardsCarousel from "@/components/CardsCarousel.vue";
 import CardActions from "@/components/CardActions.vue";
 import RecentTransactions from "@/components/RecentTransactions.vue";
+import CardDetails from "@/components/CardDetails.vue";
 import AppLogo from "@/legos/AppLogo.vue";
 import AddNewButton from "@/legos/AddNewButton.vue";
 
@@ -48,6 +50,7 @@ export default defineComponent({
     CardsCarousel,
     CardActions,
     RecentTransactions,
+    CardDetails,
   },
 });
 </script>

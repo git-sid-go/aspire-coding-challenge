@@ -11,6 +11,8 @@ export const CommonIcons = {
   add: require("./icons/box.svg"),
   appNameLogo: require("./icons/Logo-2.svg"),
   transaction: require("./icons/Group 11889-1.svg"),
+  card: require("./icons/Group 11889.svg"),
+  caretRight: require("./icons/next.svg"),
 };
 
 export const CardIcons = {
