@@ -29,6 +29,15 @@ const routes: Array<RouteRecordRaw> = [
       authRequired: true,
     },
   },
+  {
+    path: "/apply-and-manage-loans/new-loan",
+    name: "NewLoan",
+    component: () =>
+      import(/* webpackChunkName: "newloan" */ "../views/NewLoan.vue"),
+    meta: {
+      authRequired: true,
+    },
+  },
 ];
 
 const router = createRouter({

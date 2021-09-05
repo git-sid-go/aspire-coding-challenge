@@ -7,7 +7,7 @@
         </div>
         <div class="flex justify-between">
           <AccountBalance :amount="`3,000`" />
-          <AddNewButton />
+          <AddNewButton label="New Card" />
         </div>
       </div>
       <CardTabs />

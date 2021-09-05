@@ -22,7 +22,7 @@ export default createStore({
                 email,
               });
               resolve("user created");
-            }, 2000);
+            }, 200);
           });
         },
         logOut({ commit }) {
@@ -39,6 +39,31 @@ export default createStore({
           return !!state.user;
         },
       },
+    },
+    loans: {
+      namespaced: true,
+      state: {
+        allLoans: [],
+      },
+      actions: {
+        addNewLoan({ commit }, { amount, numOfTerms }) {
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              commit("addNewLoan", {
+                amount,
+                numOfTerms,
+              });
+              resolve("Loan created");
+            }, 200);
+          });
+        },
+      },
+      mutations: {
+        addNewLoan(state, payload) {
+          state.allLoans = [...state.allLoans, payload];
+        },
+      },
+      getters: {},
     },
   },
 });
