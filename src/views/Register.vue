@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col items-center bg-app-primary h-screen py-12">
-    <div>
+    <router-link to="/">
       <img :src="appNameLogo" alt="aspire" />
-    </div>
+    </router-link>
     <p class="text-white font-bold text-lg mt-10 mb-4">
       Register as a new user!
     </p>
@@ -82,8 +82,7 @@ export default defineComponent({
     ...mapActions({
       registerUserAction: "auth/registerUser",
     }),
-    onSubmit(values: any) {
-      // alert(JSON.stringify(values, null, 2));
+    onSubmit(values: { name: string; email: string; password: string }) {
       this.registerUserAction(values).then(() => {
         this.$router.push("/apply-and-manage-loans");
       });

@@ -1,9 +1,19 @@
 import { createStore } from "vuex";
 
+interface ITerm {
+  month: string;
+  amount: number;
+  isRepayed: boolean;
+}
+interface ILoan {
+  loanId: string;
+  terms: ITerm[];
+  amount: number;
+  numOfTerms: number;
+}
+
 export default createStore({
-  state: {
-    machine: "hello",
-  },
+  state: {},
   getters: {},
   actions: {},
   mutations: {},
@@ -12,9 +22,11 @@ export default createStore({
       namespaced: true,
       state: {
         user: null,
+        isRegisteringUser: false,
       },
       actions: {
         registerUser({ commit }, { name, email }) {
+          commit("toggleIsRegistering");
           return new Promise((resolve) => {
             setTimeout(() => {
               commit("updateUser", {
@@ -22,7 +34,8 @@ export default createStore({
                 email,
               });
               resolve("user created");
-            }, 200);
+              commit("toggleIsRegistering");
+            }, 2000);
           });
         },
         logOut({ commit }) {
@@ -30,6 +43,9 @@ export default createStore({
         },
       },
       mutations: {
+        toggleIsRegistering(state) {
+          state.isRegisteringUser = !state.isRegisteringUser;
+        },
         updateUser(state, payload) {
           state.user = payload;
         },
@@ -48,10 +64,12 @@ export default createStore({
         repayAmount: 0,
         repayMonth: "",
         repayLoanId: "",
+        isRepaying: false,
       },
       actions: {
         addNewLoan({ commit }, { loanId, amount, numOfTerms, terms }) {
           return new Promise((resolve) => {
+            commit("toggleRepaying");
             setTimeout(() => {
               commit("addNewLoan", {
                 loanId,
@@ -60,18 +78,25 @@ export default createStore({
                 terms,
               });
               resolve("Loan created");
-            }, 200);
+              commit("toggleRepaying");
+            }, 500);
           });
         },
         initiateRepayTerm(
           { commit },
           { repayLoanId, repayAmount, repayMonth }
         ) {
-          console.log("action");
-          commit("showConfirmation", {
-            repayLoanId,
-            repayAmount,
-            repayMonth,
+          return new Promise((resolve) => {
+            commit("toggleRepaying");
+            setTimeout(() => {
+              commit("repayTerm", {
+                repayLoanId,
+                repayAmount,
+                repayMonth,
+              });
+              resolve("Term Repaid");
+              commit("toggleRepaying");
+            }, 2000);
           });
         },
       },
@@ -79,9 +104,36 @@ export default createStore({
         addNewLoan(state, payload) {
           state.allLoans = [...state.allLoans, payload];
         },
-        showConfirmation(state, payload) {
-          console.log("mutation");
-          state = { ...state, ...payload, showConfirmationModal: true };
+        toggleRepaying(state) {
+          state.isRepaying = !state.isRepaying;
+        },
+        repayTerm(state, payload) {
+          const { repayLoanId, repayMonth } = payload;
+
+          const repayedLoan = state.allLoans.find(
+            (loan: ILoan) => loan.loanId === repayLoanId
+          );
+
+          const repayedTerm = repayedLoan.terms.find(
+            (term: ITerm) => term.month === repayMonth
+          );
+
+          const updatedLoan = {
+            ...repayedLoan,
+            terms: [
+              ...repayedLoan.terms.filter(
+                (term: ITerm) => term.month !== repayMonth
+              ),
+              { ...repayedTerm, isRepayed: true },
+            ],
+          };
+
+          state.allLoans = [
+            ...state.allLoans.filter(
+              (loan: ILoan) => loan.loanId !== repayLoanId
+            ),
+            updatedLoan,
+          ];
         },
       },
       getters: {},

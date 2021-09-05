@@ -1,7 +1,7 @@
 <template>
   <div
     :class="
-      `flex flex-col xl:flex-row items-center xl:my-16 cursor-pointer ${
+      `flex flex-col h-10 xl:flex-row items-center xl:my-16 cursor-pointer ${
         SCREEN_WIDTH < 1280 ? 'justify-between' : ''
       }`
     "

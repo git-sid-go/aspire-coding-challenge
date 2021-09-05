@@ -1,9 +1,18 @@
 <template>
   <div class="home">
-    <div id="nav">
-      <router-link to="/apply-and-manage-loans">Loans</router-link> |
-      <router-link to="/cards">Cards</router-link> |
-      <router-link to="/register">Register</router-link>
+    <div id="nav" class="flex justify-center items-center w-screen h-screen">
+      <div class="text-center">
+        <router-link class="w-12" to="/register">
+          <h6 class="font-bold border-b border-black mb-12">
+            Code Challenge 💻
+          </h6>
+        </router-link>
+        <router-link class="w-12" to="/cards">
+          <h6 class="font-bold border-b border-black">
+            CSS Challenge 🚀
+          </h6>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>

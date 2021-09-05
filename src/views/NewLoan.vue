@@ -73,7 +73,7 @@ export default defineComponent({
     ...mapActions({
       addNewLoanAction: "loans/addNewLoan",
     }),
-    onSubmit(values: any) {
+    onSubmit(values: { amount: number; numOfTerms: number }) {
       const { amount, numOfTerms } = values;
       const startMonth = addMonths(new Date(), 1);
       const endMonth = addMonths(new Date(), numOfTerms);
