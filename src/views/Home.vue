@@ -2,7 +2,8 @@
   <div class="home">
     <div id="nav">
       <router-link to="/apply-and-manage-loans">Loans</router-link> |
-      <router-link to="/cards">Cards</router-link>
+      <router-link to="/cards">Cards</router-link> |
+      <router-link to="/register">Register</router-link>
     </div>
   </div>
 </template>

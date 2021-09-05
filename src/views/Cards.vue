@@ -13,7 +13,6 @@
       <CardTabs />
       <CardsCarousel />
     </div>
-
     <div class="bg-white rounded-tl-3xl rounded-tr-3xl">
       <q-card class="pb-6">
         <CardActions />
@@ -23,7 +22,6 @@
         </div>
       </q-card>
     </div>
-
     <BottomTabNav />
   </div>
 </template>
